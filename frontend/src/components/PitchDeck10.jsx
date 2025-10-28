@@ -7,6 +7,7 @@ import {
   CheckCircle2, ArrowRight, Sparkles, ChevronDown
 } from 'lucide-react';
 import { Button } from './ui/button';
+import { Slide6, Slide7, Slide8, Slide9, Slide10 } from './PitchDeck10Part2';
 
 const PitchDeck10 = () => {
   const [activeSlide, setActiveSlide] = useState(0);
