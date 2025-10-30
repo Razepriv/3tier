@@ -17,25 +17,19 @@ export const Slide6 = () => {
   ];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden snap-start">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden overflow-y-auto snap-start py-8 sm:py-12 md:py-16">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950" />
-      
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 px-8 max-w-7xl mx-auto w-full"
-      >
+
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-8">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-bold text-center mb-4"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-10 md:mb-12"
         >
-          <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            Proven Growth, Ready to Scale
-          </span>
+          Market Performance
         </motion.h2>
+        
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -45,7 +39,7 @@ export const Slide6 = () => {
           Performance metrics that demonstrate market leadership
         </motion.p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {metrics.map((metric, index) => (
             <motion.div
               key={index}
@@ -77,7 +71,7 @@ export const Slide6 = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 grid md:grid-cols-2 gap-6"
+          className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
         >
           <div className="bg-gradient-to-br from-blue-950/50 to-indigo-950/50 border border-blue-500/30 rounded-xl p-6">
             <h4 className="text-lg font-semibold text-blue-400 mb-3">Key Partnership</h4>
@@ -90,7 +84,7 @@ export const Slide6 = () => {
             <p className="text-gray-500 text-sm mt-2">Serving gyms, corporate wellness, hotels, and home users</p>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };
@@ -504,9 +498,7 @@ export const Slide10 = () => {
           className="mb-12"
         >
           <div className="inline-block bg-gradient-to-br from-blue-950/50 to-indigo-950/50 border border-blue-500/30 rounded-2xl p-8">
-            <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-4xl font-bold text-white">BR</span>
-            </div>
+
             <h3 className="text-2xl font-bold text-gray-200 mb-2">Balaji Ramachandan</h3>
             <p className="text-blue-400 font-semibold mb-3">Director & Founder</p>
             <p className="text-gray-400">24+ years experience | PRECOR (USA) veteran | Industry pioneer</p>
@@ -539,15 +531,6 @@ export const Slide10 = () => {
               <div className="text-3xl font-bold text-blue-400">2-3 Years</div>
               <div className="text-sm text-gray-500">ROI</div>
             </div>
-          </div>
-
-          <div className="flex justify-center gap-4">
-            <Button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-6 text-lg rounded-xl">
-              Book a Meeting
-            </Button>
-            <Button variant="outline" className="border-blue-500/50 text-blue-400 hover:bg-blue-950/30 px-8 py-6 text-lg rounded-xl">
-              Request Deck PDF
-            </Button>
           </div>
         </motion.div>
 

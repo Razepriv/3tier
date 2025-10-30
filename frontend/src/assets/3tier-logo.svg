@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="200" viewBox="0 0 800 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 120px 'Arial Black', sans-serif; }
+    .subtitle { font: bold 100px 'Arial', sans-serif; }
+  </style>
+  
+  <!-- 3TIER text -->
+  <text x="20" y="140" class="title" fill="#000000">3TIER</text>
+  
+  <!-- FITNESS text -->
+  <text x="380" y="140" class="subtitle" fill="#FF0000">FITNESS</text>
+  
+  <!-- Dumbbell icon -->
+  <g transform="translate(700, 70)">
+    <rect x="0" y="25" width="80" height="10" fill="#00EE00"/>
+    <circle cx="0" cy="30" r="20" fill="#00EE00"/>
+    <circle cx="80" cy="30" r="20" fill="#00EE00"/>
+  </g>
+</svg>

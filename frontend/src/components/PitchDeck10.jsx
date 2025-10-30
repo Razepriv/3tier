@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Slide6, Slide7, Slide8, Slide9, Slide10 } from './PitchDeck10Part2';
+import logo from '../assets/3tier.svg';
 
 const PitchDeck10 = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -29,7 +30,7 @@ const PitchDeck10 = () => {
     <div className="relative bg-slate-950">
       {/* Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-orange-500 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00FF00] via-[#FF0000] to-[#00FF00] origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
 
@@ -42,12 +43,12 @@ const PitchDeck10 = () => {
             className="group flex items-center gap-2"
           >
             <span className={`text-xs font-medium transition-all duration-300 ${
-              activeSlide === i ? 'text-blue-400 opacity-100' : 'text-gray-600 opacity-0 group-hover:opacity-100'
+              activeSlide === i ? 'text-[#00FF00] opacity-100' : 'text-gray-600 opacity-0 group-hover:opacity-100'
             }`}>
               {['Vision', 'Market', 'Legacy', 'Ecosystem', 'Growth', 'Traction', 'Financials', 'Investment', 'Roadmap', 'Team'][i]}
             </span>
             <div className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              activeSlide === i ? 'bg-blue-500 w-3 h-3' : 'bg-gray-700 group-hover:bg-gray-500'
+              activeSlide === i ? 'bg-[#00FF00] w-3 h-3' : 'bg-gray-700 group-hover:bg-gray-500'
             }`} />
           </button>
         ))}
@@ -115,13 +116,18 @@ const Slide1 = () => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="inline-block"
+            className="inline-block w-[800px] max-w-full mx-auto"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 blur-3xl opacity-30" />
-              <h1 className="relative text-6xl md:text-8xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-blue-500 bg-clip-text text-transparent">
-                3Tier Fitness
-              </h1>
+            <div className="relative max-w-[400px] mx-auto">
+              <div className="absolute inset-0 bg-[#00EE00] blur-[100px] opacity-30" />
+              <div className="absolute inset-0 bg-[#FF3366] blur-[80px] opacity-20 mix-blend-multiply" />
+              <div className="relative w-full">
+                <img 
+                  src={logo}
+                  alt="3Tier Fitness" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </motion.div>
 
@@ -182,22 +188,7 @@ const Slide1 = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-gray-500"
-          >
-            <span className="text-sm">Scroll to explore</span>
-            <ChevronDown className="w-6 h-6" />
-          </motion.div>
-        </motion.div>
+        
       </div>
     </section>
   );
@@ -260,9 +251,10 @@ const Slide2 = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <StatCard icon={Users} value="1.4B" label="Population" delay={0.3} />
-              <StatCard icon={Activity} value="₹XXB" label="Market Size" delay={0.4} />
+              <StatCard icon={Activity} value="₹16.2K Cr" label="2024 Market Size" sublabel="$1.9B" delay={0.4} />
+              <StatCard icon={TrendingUp} value="₹37.7K Cr" label="2030 Forecast" sublabel="$4.5B" delay={0.5} />
             </div>
           </motion.div>
 
@@ -313,7 +305,7 @@ const Slide2 = () => {
 // Slide 3: Foundation & Legacy
 const Slide3 = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden snap-start">
+    <section className="relative min-h-screen flex items-center justify-center overflow-x-hidden overflow-y-auto snap-start py-16 sm:py-20">
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-slate-950 to-blue-950"
         initial={{ opacity: 0 }}
@@ -324,13 +316,13 @@ const Slide3 = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative z-10 px-8 max-w-6xl mx-auto w-full"
+        className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 w-full"
       >
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-6xl font-bold text-center mb-20"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 sm:mb-16 md:mb-20"
         >
           <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
             Our Foundation & Legacy
@@ -338,11 +330,11 @@ const Slide3 = () => {
         </motion.h2>
 
         {/* Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-500" />
+        <div className="relative max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
+          {/* Center Line */}
+          <div className="absolute left-1/2 top-12 bottom-36 w-[2px] bg-gradient-to-b from-blue-600/50 via-blue-600/20 to-transparent" />
 
-          <div className="space-y-16">
+          <div className="relative pt-12">
             {/* PRECOR Experience */}
             <TimelineItem
               icon={Building2}
@@ -380,15 +372,15 @@ const Slide3 = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-20 relative"
+          className="mt-12 sm:mt-16 md:mt-20 relative max-w-4xl mx-auto px-4 sm:px-6"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 blur-3xl" />
-          <div className="relative bg-slate-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 md:p-12">
-            <Sparkles className="w-8 h-8 text-blue-400 mb-4" />
-            <blockquote className="text-2xl md:text-3xl text-gray-200 font-light italic mb-4">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-indigo-500/10 blur-3xl opacity-50" />
+          <div className="relative bg-slate-900/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-6 sm:p-8 md:p-12">
+            <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-400 mb-3 sm:mb-4" />
+            <blockquote className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-200 font-light italic mb-3 sm:mb-4">
               "Our success is built on trust, loyalty, and delivering world-class service."
             </blockquote>
-            <p className="text-blue-400 font-semibold">— Balaji Ramachandan, Director</p>
+            <p className="text-blue-400 font-semibold text-sm sm:text-base">— Balaji Ramachandan, Director</p>
           </div>
         </motion.div>
       </motion.div>
@@ -614,40 +606,61 @@ const Slide5 = () => {
 export default PitchDeck10;
 
 // Helper Components
-const StatCard = ({ icon: Icon, value, label, delay }) => (
+const StatCard = ({ icon: Icon, value, label, sublabel, delay }) => (
   <motion.div
-    initial={{ opacity: 0, scale: 0.8 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.6, delay }}
-    className="bg-slate-900/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:border-blue-500/40 transition-all duration-300"
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, delay }}
+    className="bg-gradient-to-br from-blue-950/50 to-indigo-950/50 border border-blue-500/30 rounded-xl p-4 sm:p-5 md:p-6"
   >
-    <Icon className="w-8 h-8 text-blue-500 mb-3" />
-    <div className="text-3xl font-bold text-blue-400">{value}</div>
-    <div className="text-sm text-gray-400">{label}</div>
+    <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-blue-400 mb-3 md:mb-4" />
+    <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2">{value}</div>
+    <div className="text-blue-400 text-sm sm:text-base">{label}</div>
+    {sublabel && <div className="text-blue-500/70 text-xs sm:text-sm mt-1">{sublabel}</div>}
   </motion.div>
 );
 
 const TimelineItem = ({ icon: Icon, year, title, description, side, delay }) => (
-  <motion.div
-    initial={{ opacity: 0, x: side === 'left' ? -50 : 50 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 0.8, delay }}
-    className={`flex items-center gap-8 ${side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-  >
-    <div className={`flex-1 ${side === 'left' ? 'md:text-right' : 'md:text-left'}`}>
-      <div className="bg-slate-900/50 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:border-blue-500/40 transition-all duration-300">
-        <div className="text-blue-400 font-semibold mb-2">{year}</div>
-        <h3 className="text-xl font-bold text-gray-200 mb-2">{title}</h3>
-        <p className="text-gray-400">{description}</p>
+  <div className={`flex items-start relative mb-24 last:mb-0 ${
+    side === 'left' ? 'md:ml-[50%] md:pl-24' : 'md:mr-[50%] md:pr-24'
+  }`}>
+    {/* Year label */}
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay }}
+      className="absolute -top-8 text-blue-400/80 text-sm font-medium"
+    >
+      {year}
+    </motion.div>
+
+    {/* Content Side */}
+    <motion.div 
+      initial={{ opacity: 0, x: side === 'left' ? 20 : -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, delay }}
+      className="w-full relative"
+    >
+      {/* Card content */}
+      <div className="relative bg-slate-900/80 border border-blue-900/30 rounded-xl p-6 backdrop-blur-sm
+        hover:border-blue-800/40 hover:bg-slate-900/90 transition-all duration-300">
+        <h3 className="text-xl font-bold text-gray-100 mb-2">{title}</h3>
+        <p className="text-gray-400/90">{description}</p>
       </div>
-    </div>
-    
-    <div className="relative z-10">
-      <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
-        <Icon className="w-8 h-8 text-white" />
+    </motion.div>
+
+    {/* Center Icon */}
+    <motion.div
+      initial={{ scale: 0.5, opacity: 0 }}
+      whileInView={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5, delay: delay + 0.2 }}
+      className={`absolute ${side === 'left' ? '-left-12' : '-right-12'} top-0 z-10`}
+    >
+      <div className="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center
+        shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-300">
+        <Icon className="w-7 h-7 text-white" />
       </div>
-    </div>
-    
-    <div className="flex-1" />
-  </motion.div>
+    </motion.div>
+  </div>
 );
